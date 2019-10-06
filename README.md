@@ -2,5 +2,5 @@
 shopping-cart using react 
 
 
-DEMO: 
-https://github.com/ayyappag10/shopping-cart/blob/master/demo/demo.gif
+
+![Shopping Cart Demo](demo/demo.gif)
