@@ -1,6 +1,10 @@
 import {UPDATE_TOTAL} from "./actionTypes"
 
-const totalReducer = (state={ items: 0, cost: 0}, action)=>{
+const totalReducer = (state= 
+    {
+     items: JSON.parse(localStorage.getItem("cartTotalInfo")).totalNoOfItems,
+     cost: JSON.parse(localStorage.getItem("cartTotalInfo")).totalCost
+    }, action)=>{
     switch(action.type){
 
         case UPDATE_TOTAL:
