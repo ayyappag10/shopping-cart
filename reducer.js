@@ -1,18 +1,20 @@
-import { UPDATE_TOTAL } from "./actionTypes";
-
-const totalReducer = (
-  state = {
-    items: localStorage.getItem("cartTotalInfo") ? JSON.parse(localStorage.getItem("cartTotalInfo")).totalNoOfItems: 0,
-    cost: localStorage.getItem("cartTotalInfo") ? JSON.parse(localStorage.getItem("cartTotalInfo")).totalCost :0
-  },
+import { UDPATE_CART } from "./actiontypes";
+import { ADD_PRODUCT } from "./actiontypes";
+import { REMOVE_PRODUCT } from "./actiontypes";
+const cartReducer = function(
+  state = { products: localStorage.getItem("cartProducts") ?  [...JSON.parse(localStorage.getItem("cartProducts"))]: [] },
   action
-) => {
+) {
   switch (action.type) {
-    case UPDATE_TOTAL:
-      return Object.assign({}, state, { ...action.payload });
+    case UDPATE_CART:
+      return { ...state, products: [...action.payload] };
+    case ADD_PRODUCT:
+      return { ...state, products: [...state.products, action.payload] };
+    case REMOVE_PRODUCT:
+      return { ...state, products: [...state.products, action.payload] };
     default:
       return state;
   }
 };
 
-export default totalReducer;
+export default cartReducer;
