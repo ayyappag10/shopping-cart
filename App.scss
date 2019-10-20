@@ -1,0 +1,209 @@
+$header-desktop-height: 7rem;
+$desktop-filters-width: 12rem;
+$prod-image-width-height: 15rem;
+$header-desktop-min-width: 52rem;
+$prod-cont-min-width-desktop: 40rem;
+$prim-font-size: 1em;
+
+$break-mobile: 450px;
+$break-tablet: 750px;
+
+.App {
+    position: relative;
+  }
+  
+  /*-----------------cart-button-sort----------------------*/
+  
+  #cart-sort-cont {
+    position: fixed;
+    width: 100%;
+    right: 0;
+    background-color: white;
+    top: 0;
+    box-sizing: border-box;
+    height: $header-desktop-height;
+    padding: 1rem;
+  }
+  
+  #cart-button-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #cart-button {
+    font-size: 1rem;
+  }
+  
+  #sort-Bar {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    align-items: baseline;
+    margin-top: 1em;
+    @media screen and (max-width: $break-mobile) {
+      width: 100px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      background-color: #cccccc;
+    }
+  }
+
+  #sort-products-dropdown {
+    margin-left: 1em;
+  }
+  
+  select {
+    font-size: $prim-font-size;
+  }
+  option {
+    font-size: $prim-font-size;
+  }
+  
+  /*-----------------filters----------------------*/
+  
+  #filters-tab {
+    position: fixed;    
+    width: $desktop-filters-width;
+    padding-left: 1rem;
+    bottom: 0;
+    top: $header-desktop-height;
+    background-color: white;
+    @media screen and (max-width: $break-mobile) {
+      display: none;
+    }
+  }
+  
+  #filters-tab-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    top: 4em;
+  }
+  
+  #filters-label {
+    margin-left: 1rem;
+  }
+  
+  .filter-item {
+    width: 3em;
+    height: 3em;
+    background-color: cornsilk;
+    border: solid 1px black;
+    border-radius: 2em;
+    margin: 1em;
+    font-size: $prim-font-size;
+    padding-top: 1em;
+    text-align: center;
+  }
+  #filter-item-active {
+    background-color: red;
+    color: white;
+  }
+  
+  #filter-item-inactive {
+    background-color: black;
+    color: white;
+  }
+  
+  /*-----------------shelf-products-loading----------------------*/
+  
+  .loading {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  #products-page {
+    margin-left: $desktop-filters-width;
+    margin-top: $header-desktop-height;
+    // min-width: $prod-cont-min-width-desktop;
+    @media screen and (max-width: $break-mobile) {
+      margin-left: 0;
+      min-width: 0;
+    }
+  }
+  
+  #product-img {
+    width: $prod-image-width-height;
+    height: $prod-image-width-height;
+    object-fit: contain;
+  }
+  
+  #product-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: $break-tablet) {
+      flex-direction: column;
+    }
+  }
+  
+  #product-info {
+    display: flex;
+    font-size: 1rem;
+    margin-left: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    @media screen and (max-width: $break-tablet) {
+      align-items: center;
+      margin-left: 0;
+    }
+  }
+  #product-info ul {
+    padding: 0;
+  }
+  
+  .add-to-cart-button {
+    background-color: orangered;
+    color: white;
+    border-radius: 3px;
+    font-size: 20px;
+  }
+  #prod-sep {
+    height: 2px;
+    margin: 5px;
+  }
+  /*-----------------modal-cart-information----------------------*/
+  #cart-items-page {
+    position: fixed;
+    height: 600px;
+    width: 400px;
+    top: 0;
+    right: 0;
+    font-size: 32px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    overflow: auto;
+    padding: 20px;
+    @media screen and (max-width: $break-mobile) {
+      width: 250px;
+    }
+  }
+  #cart-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 20px 0px 0px 0px;
+  }
+  #cart-item-info {
+    display: inline-block;
+  }
+  
+  #cart-prod-tot-sep {
+    background-color: white;
+    margin-top: 30px;
+    height: 2px;
+  }
+  
+  /*-----------------global----------------------*/
+  
+  .seprator {
+    background-color: gray;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
