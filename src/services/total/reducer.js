@@ -1,17 +1,18 @@
-import {UPDATE_TOTAL} from "./actionTypes"
+import { UPDATE_TOTAL } from "./actionTypes";
 
-const totalReducer = (state= 
-    {
-     items: JSON.parse(localStorage.getItem("cartTotalInfo")).totalNoOfItems,
-     cost: JSON.parse(localStorage.getItem("cartTotalInfo")).totalCost
-    }, action)=>{
-    switch(action.type){
-
-        case UPDATE_TOTAL:
-        return Object.assign({}, state, {...action.payload} )
-        default:
-            return state; 
-    }
-}
+const totalReducer = (
+  state = {
+    items: localStorage.getItem("cartTotalInfo") ? JSON.parse(localStorage.getItem("cartTotalInfo")).totalNoOfItems: 0,
+    cost: localStorage.getItem("cartTotalInfo") ? JSON.parse(localStorage.getItem("cartTotalInfo")).totalCost :0
+  },
+  action
+) => {
+  switch (action.type) {
+    case UPDATE_TOTAL:
+      return Object.assign({}, state, { ...action.payload });
+    default:
+      return state;
+  }
+};
 
 export default totalReducer;
